@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sentimental Stock Reports</title>
+    <link href="stylesheet.css" type="text/css" rel="stylesheet">
+    <script src='https://d3js.org/d3.v4.min.js'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+</head>
+<body>
+<header>
+    <h1>How Sentiment of Earnings Reports Affects Stock Price</h1>
+</header>
+<div class="dropdown">
+  <button onclick="showDropdown()" class="dropbtn">Stocks</button>
+  <div id="myDropdown" class="dropdown-content">
+      <a onclick="create_chart('NVDA')" href="#">NVDA</a>
+      <a href="#" onclick="create_chart('AMD')">AMD</a>
+      <a href="#" onclick="create_chart('AAPL')">AAPL</a>
+      <a href="#" onclick="create_chart('MSFT')">MSFT</a>
+      <a href="#" onclick="create_chart('GOOG')">GOOG</a>
+      <a href="#" onclick="create_chart('AMZN')">AMZN</a>
+      <a href="#" onclick="create_chart('MSFT')">MSFT</a>
+  </div>
+</div>
+<div id="container">
+<script src='create_xy.js'></script>
+</div>
+<div class="well">
+    <p>
+        This visualization compares the sentiment analysis of Quarterly Earnings Reports (10-Q's)
+        and percent change in stock price.
+    </p>
+    <p>
+        The sentiment analysis of each 10-Q document is the average of the "sentiment polarity" of each sentence in the 10-Q
+        document as calculated by the <a href="https://textblob.readthedocs.io/en/dev/">TextBlob library</a>.
+    </p>
+    <p>
+        This project is far from done. If you would like to contribute, please feel free to fork
+        <a href="https://github.com/wardbradt/SEC-Sentiment-Stock-Prediction">the repository</a> on GitHub. This project
+        could be greatly enhanced if a more thorough sentiment analysis library were used or if one could figure out how
+        to automatically clean 10-Q's.
+    </p>
+</div>
+
+</body>
+</html>
