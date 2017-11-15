@@ -64,7 +64,7 @@ window.onclick = function(event) {
 create_chart("NVDA");
 
 function create_chart(ticker) {
-    d3.json(ticker + "_info.json", draw_stock_chart);
+    d3.json("json-files/" + ticker + "_info.json", draw_stock_chart);
 }
 
 function percent_increase(d) {
